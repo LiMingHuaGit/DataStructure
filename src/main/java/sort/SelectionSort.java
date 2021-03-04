@@ -15,8 +15,12 @@ public class SelectionSort {
 //        selectionSort(array);
         int[] array = {8,1,3,2,4,5,6,9,7};
         print(array);
-        selectionSort1(array);
+        //selectionSort1(array);
         //selectionSort(array);
+        //BubbleSort.findMax(array,6);
+
+        BubbleSort.dismantleSort(array);
+        print(array);
     }
 
     /**
