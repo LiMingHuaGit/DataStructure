@@ -20,7 +20,7 @@ public class InsertSort {
         //从第二位开始移动数组元素
         for (int i = 1; i <array.length ; i++) {
             //向前比较
-            for(int j = i;j > 0 && array[j] < array[j-1];j--){
+            for(int j = i;j > 0 && array[j] < array[j-1];--j){
                 SelectionSort.swapArray(array,j,j-1);
             }
 
@@ -34,6 +34,29 @@ public class InsertSort {
 //                }
 //            }
 
+        }
+    }
+
+    /**
+     * @Description 优化插入排序，将元素存在tmp中，比较后大于tmp的直接后移一位，最后将tmp直接插入在正确的位置
+     * @param array 数组
+     */
+    public static void sort1(int[] array){
+        int tmp = array[1];
+        for (int i = 1; i <array.length ; i++) {
+            tmp = array[i];
+//            int j = i - 1;
+//            while (j >= 0 && array[j] > tmp)
+//            {
+//                array[j + 1] = array[j];
+//                --j;
+//            }
+//            array[j + 1] = tmp;
+            int j = i;
+            for (;j > 0 && array[j-1] > tmp ; j--) {
+                array[j] = array[j-1];
+            }
+            array[j] = tmp;
         }
     }
 }

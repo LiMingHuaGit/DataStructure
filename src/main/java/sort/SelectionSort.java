@@ -11,15 +11,15 @@ import javax.sound.midi.SoundbankResource;
  **/
 public class SelectionSort {
     public static void main(String[] args) {
-//        int[] array = {9,8,7,6,5,4,3,2,1};
+        int[] array = {9,8,7,6,5,4,3,2,1};
 //        selectionSort(array);
-        int[] array = {8,1,3,2,4,5,6,9,7};
+        //int[] array = {8,1,3,2,4,5,6,9,7};
         print(array);
         //selectionSort1(array);
         //selectionSort(array);
         //BubbleSort.findMax(array,6);
         //BubbleSort.dismantleSort(array);
-        InsertSort.sort(array);
+        InsertSort.sort1(array);
         print(array);
     }
 
