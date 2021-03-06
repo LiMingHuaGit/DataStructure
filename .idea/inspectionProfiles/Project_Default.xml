@@ -35,7 +35,7 @@
       <option name="IGNORE_JAVADOC_PERIOD" value="true" />
       <option name="IGNORE_DUPLICATED_THROWS" value="false" />
       <option name="IGNORE_POINT_TO_ITSELF" value="false" />
-      <option name="myAdditionalJavadocTags" value="ClassName,Description:,Author,Date,Version,date,date:,Description,param:,return:,auther:" />
+      <option name="myAdditionalJavadocTags" value="ClassName,Description:,Author,Date,Version,date,date:,Description,param:,return:,auther:,ProjectName,ClassName:" />
     </inspection_tool>
     <inspection_tool class="MysqlParsingInspection" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="SqlDialectInspection" enabled="false" level="WARNING" enabled_by_default="false" />

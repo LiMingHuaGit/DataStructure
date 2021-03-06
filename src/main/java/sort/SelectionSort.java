@@ -18,8 +18,8 @@ public class SelectionSort {
         //selectionSort1(array);
         //selectionSort(array);
         //BubbleSort.findMax(array,6);
-
-        BubbleSort.dismantleSort(array);
+        //BubbleSort.dismantleSort(array);
+        InsertSort.sort(array);
         print(array);
     }
 
@@ -138,7 +138,7 @@ public class SelectionSort {
      */
     public static void print(int[] array){
         for(int i:array){
-            System.out.print(i+" ");
+            System.out.print(i + " ");
         }
         System.out.println();
     }
