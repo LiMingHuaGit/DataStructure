@@ -19,7 +19,7 @@ public class SelectionSort {
         //selectionSort(array);
         //BubbleSort.findMax(array,6);
         //BubbleSort.dismantleSort(array);
-        InsertSort.sort1(array);
+        InsertSort.shellSort(array);
         print(array);
     }
 

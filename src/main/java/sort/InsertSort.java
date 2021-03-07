@@ -59,4 +59,19 @@ public class InsertSort {
             array[j] = tmp;
         }
     }
+
+    /**
+     * 希尔排序
+     * @param array 数组
+     */
+    public static void shellSort(int[] array){
+        for (int gap = 4; gap >0 ; gap/=2) {
+            for (int i = gap; i <array.length ; i++) {
+                //向前比较
+                for(int j = i;j > gap-1 && array[j] < array[j-gap];j-=gap){
+                    SelectionSort.swapArray(array,j,j-gap);
+                }
+            }
+        }
+    }
 }
