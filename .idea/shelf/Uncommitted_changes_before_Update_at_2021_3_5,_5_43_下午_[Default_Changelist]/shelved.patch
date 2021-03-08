@@ -1,0 +1,69 @@
+Index: src/main/java/sort/SelectionSort.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package sort;\n\nimport javax.sound.midi.SoundbankResource;\n\n/**\n * @ClassName SelectionSort\n * @Description: 选择排序\n * @Author LiMinghua\n * @Date 2021/3/2\n * @Version V1.0\n **/\npublic class SelectionSort {\n    public static void main(String[] args) {\n//        int[] array = {9,8,7,6,5,4,3,2,1};\n//        selectionSort(array);\n        int[] array = {8,1,3,2,4,5,6,9,7};\n        print(array);\n        selectionSort1(array);\n        //selectionSort(array);\n    }\n\n    /**\n     * 每次交换最小值放在前面\n     * @Description\n     * @return:\n     * @auther: LiMinghua\n     * @date: 2021/3/3 0:07\n     */\n    public static void selectionSort(int[] array){\n        //边界处理\n        boolean ifend = false;\n\n        for(int i = 0;i<array.length-1;i++){\n            //数组每次循环的最前面位置\n            int minPosition = i;\n            //找出最小值位置并记录\n            for(int j=i+1;j<array.length;j++){\n                minPosition = array[j]<array[minPosition]?j:minPosition;\n            }\n            //交换\n            swapArray(array,i,minPosition);\n\n            System.out.println(\"第\"+(i)+\"次循环\");\n            print(array);\n\n            //判定是否正序\n            for(int k = 0;k<array.length-1;k++){\n                if(array[k]<array[k+1]){\n                    ifend = true;\n                }else {\n                    ifend = false;\n                    break;\n                }\n            }\n            //正序跳出循环\n            if(ifend){\n                break;\n            }\n        }\n    }\n\n    /**\n     * 每次交换最小值和最大值\n     * @Description\n     * @return:\n     * @auther: LiMinghua\n     * @date: 2021/3/3 0:08\n     */\n    public static void selectionSort1(int[] array){\n        //边界处理\n        boolean ifend = false;\n\n        for(int i = 0;i<array.length-1;i++){\n\n            System.out.println(\"第\"+(i)+\"次循环\");\n            //数组每次循环的最前面位置\n            int minPosition = i;\n            //数组每次循环的最后面位置\n            int maxPosition = array.length-i-1;\n\n            //找出最小值\n            for(int j=i+1;j<array.length;j++){\n                minPosition = array[j]<array[minPosition]?j:minPosition;\n            }\n            swapArray(array,i,minPosition);\n            print(array);\n\n            //找出最大值\n            for(int j=i;j<array.length-i;j++){\n                maxPosition = array[j]>array[maxPosition]?j:maxPosition;\n            }\n            swapArray(array,array.length-i-1,maxPosition);\n            print(array);\n\n            //判定是否正序\n            for(int k = 0;k<array.length-1;k++){\n                if(array[k]<array[k+1]){\n                    ifend = true;\n                }else {\n                    ifend = false;\n                    break;\n                }\n            }\n            //正序跳出循环\n            if(ifend){\n                break;\n            }\n        }\n    }\n\n    /**\n     * 交换数组元素\n     * @Description\n     * @param array 数组\n     * @param i 交换位置\n     * @param j 交换位置\n     * @return: void\n     * @auther: LiMinghua\n     * @date: 2021/3/3 0:41\n     */\n    public static void swapArray(int[] array, int i, int j){\n\n        int temp = array[i];\n        array[i] = array[j];\n        array[j] = temp;\n    }\n\n    /**\n     * 打印数组\n     * @Description\n     * @return:\n     * @auther: LiMinghua\n     * @date: 2021/3/3 0:42\n     */\n    public static void print(int[] array){\n        for(int i:array){\n            System.out.print(i+\" \");\n        }\n        System.out.println();\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/sort/SelectionSort.java b/src/main/java/sort/SelectionSort.java
+--- a/src/main/java/sort/SelectionSort.java	(revision 387702df081c67e8e6c8d97b49f26ea699ad821d)
++++ b/src/main/java/sort/SelectionSort.java	(date 1614820798361)
+@@ -134,7 +134,7 @@
+      */
+     public static void print(int[] array){
+         for(int i:array){
+-            System.out.print(i+" ");
++            System.out.print(i + " ");
+         }
+         System.out.println();
+     }
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"VcsDirectoryMappings\">\n    <mapping directory=\"$PROJECT_DIR$/..\" vcs=\"Git\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+--- a/.idea/vcs.xml	(revision 387702df081c67e8e6c8d97b49f26ea699ad821d)
++++ b/.idea/vcs.xml	(date 1614936761125)
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="VcsDirectoryMappings">
+-    <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
++    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: .idea/jarRepositories.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/jarRepositories.xml b/.idea/jarRepositories.xml
+new file mode 100644
+--- /dev/null	(date 1614821092899)
++++ b/.idea/jarRepositories.xml	(date 1614821092899)
+@@ -0,0 +1,20 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="RemoteRepositoriesConfiguration">
++    <remote-repository>
++      <option name="id" value="central" />
++      <option name="name" value="Central Repository" />
++      <option name="url" value="https://repo.maven.apache.org/maven2" />
++    </remote-repository>
++    <remote-repository>
++      <option name="id" value="central" />
++      <option name="name" value="Maven Central repository" />
++      <option name="url" value="https://repo1.maven.org/maven2" />
++    </remote-repository>
++    <remote-repository>
++      <option name="id" value="jboss.community" />
++      <option name="name" value="JBoss Community repository" />
++      <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
++    </remote-repository>
++  </component>
++</project>
+\ No newline at end of file
